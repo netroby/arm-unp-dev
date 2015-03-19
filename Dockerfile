@@ -9,7 +9,7 @@ RUN yum clean all && \
     yum install -y http://dev.mysql.com/get/mysql-community-release-fc21-5.noarch.rpm && \
     yum update -y && \
     yum install -y vim nginx php-cli php-fpm php-mysqlnd php-gd php-mbstring php-mcrypt curl && \
-    yum clean all && \
+    yum clean all
 
 ENV HOME /root
 
