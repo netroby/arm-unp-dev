@@ -6,8 +6,16 @@ RUN yum clean all && \
     sed -i "s/enabled=0/enabled=1/g" /etc/yum.repos.d/remi.repo && \
     yum install -y http://dev.mysql.com/get/mysql-community-release-fc21-5.noarch.rpm && \
     yum update -y && \
-    yum install -y vim nginx php-cli php-fpm php-mysqlnd php-gd php-mbstring php-mcrypt curl && \
+    yum install -y supervisor vim nginx php-cli php-fpm php-mysqlnd php-gd php-mbstring php-mcrypt curl && \
     yum clean all
+
+COPY etc/php-fpm.conf /etc/php-fpm.conf
+COPY etc/php-fpm.d/www.conf /etc/php-fpm.d/www.conf
+COPY etc/php.ini /etc/php.ini
+COPY etc/supervisord.d/nginx.ini /etc/supervisord.d/nginx.ini
+COPY etc/supervisord.d/php-fpm.ini /etc/supervisord.d/php-fpm.ini
+COPY etc/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY root/.bashrc /root/.bashrc
 
 ENV HOME /root
 
