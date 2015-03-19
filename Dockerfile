@@ -1,7 +1,5 @@
 FROM fedora:21
 
-VOLUME /var/log
-
 RUN yum clean all && \
     yum update -y && \
     yum install -y http://rpms.famillecollet.com/fedora/remi-release-21.rpm && \
