@@ -1,10 +1,10 @@
-FROM fedora:21
+FROM fedora:22
 
 RUN yum clean all && \
     yum update -y && \
-    yum install -y http://rpms.famillecollet.com/fedora/remi-release-21.rpm && \
+    yum install -y http://rpms.famillecollet.com/fedora/remi-release-22.rpm && \
     sed -i "s/enabled=0/enabled=1/g" /etc/yum.repos.d/remi.repo && \
-    yum install -y http://dev.mysql.com/get/mysql-community-release-fc21-5.noarch.rpm && \
+    yum install -y http://dev.mysql.com/get/mysql-community-release-fc22-5.noarch.rpm && \
     yum update -y && \
     yum install -y php-pecl-redis supervisor nginx php-cli php-fpm php-mysqlnd php-gd php-mbstring php-mcrypt curl mysql-community-client redis && \
     yum clean all
