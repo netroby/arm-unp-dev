@@ -6,7 +6,7 @@ RUN dnf clean all && \
     sed -i "s/enabled=0/enabled=1/g" /etc/yum.repos.d/remi.repo && \
     dnf install -y http://dev.mysql.com/get/mysql-community-release-fc22-5.noarch.rpm && \
     dnf update -y && \
-    dnf install -y php-pecl-redis supervisor nginx php-cli php-fpm php-mysqlnd php-gd php-mbstring php-mcrypt curl mysql-community-client redis && \
+    dnf install -y htop php-pecl-redis supervisor nginx php-cli php-fpm php-mysqlnd php-gd php-mbstring php-mcrypt curl mysql-community-client redis && \
     dnf clean all
 
 COPY etc/php-fpm.conf /etc/php-fpm.conf
