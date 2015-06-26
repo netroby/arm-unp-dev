@@ -1,4 +1,4 @@
-FROM fedora:22
+FROM armbuild/scw-distrib-fedora:22
 
 RUN dnf clean all && \
     dnf update -y && \
