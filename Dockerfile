@@ -1,7 +1,7 @@
 FROM armbuild/ubuntu:vivid
 
 RUN apt-get update -y && \
-    apt-get install -y php5-redis supervisor nginx php5-cli php5-fpm php5-mysqlnd php5-gd php5-mbstring php5-curl php5-mcrypt curl mysql-client redis-server redis-tools && \
+    apt-get install -y php5-redis supervisor nginx php5-cli php5-fpm php5-mysqlnd php5-gd php5-curl php5-mcrypt curl mysql-client redis-server redis-tools && \
     dnf clean all
 
 COPY etc/php-fpm.conf /etc/php-fpm.conf
